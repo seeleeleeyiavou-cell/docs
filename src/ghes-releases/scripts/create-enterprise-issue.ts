@@ -99,17 +99,18 @@ async function createDeprecationIssue() {
     return
   }
 
-  // Create the deprecation issue
   const issueTemplate = readFileSync('src/ghes-releases/lib/deprecation-steps.md', 'utf8')
   const { data, content } = matter(issueTemplate)
   const { title, labels } = data
   const renderedContent = content.replaceAll('{{ release-number }}', oldestSupported)
-  const body = `GHES ${oldestSupported} deprecation occurs on ${deprecationDate}.
+  const body = `GHES ${oldestSupported} deprecation occurs on ${deprecationDate}. Don't start before that date. Late is fine.
 
 ${renderedContent}`
   await createIssue(
     repo,
-    title.replaceAll('{{ release-number }}', oldestSupported),
+    title
+      .replaceAll('{{ release-number }}', oldestSupported)
+      .replaceAll('{{ deprecation-date }}', deprecationDate),
     body,
     labels,
     oldestSupported,
@@ -346,7 +347,6 @@ function getNumberDaysUntilMilestone(milestoneDate: string): number {
   const nextMilestoneDateTime = new Date(milestoneDate).getTime()
   const todayTime = new Date(today).getTime()
   const differenceInMilliseconds = nextMilestoneDateTime - todayTime
-  // Return the difference in days
   return Math.floor(differenceInMilliseconds / (1000 * 60 * 60 * 24))
 }
 
@@ -378,13 +378,14 @@ async function isExistingIssue(
   const issues = await octokit.request(`GET /search/issues?q=${query}`)
 
   if (titleMatch) {
-    for (const issue of issues.data.items) {
-      if (issue.title.includes(titleMatch)) {
-        console.log(`Issue ${issue.html_url} already exists for this release.`)
-        return true
-      }
-      return false
+    const match = issues.data.items.find((issue: { title: string }) =>
+      issue.title.includes(titleMatch),
+    )
+    if (match) {
+      console.log(`Issue ${match.html_url} already exists for this release.`)
+      return true
     }
+    return false
   }
 
   const issueExists = !!issues.data.items.length

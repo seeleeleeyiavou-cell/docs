@@ -90,7 +90,7 @@ The {% data variables.product.prodname_copilot_short %} usage metrics APIs inclu
 * The number of pull requests created by {% data variables.copilot.copilot_cloud_agent %} that have been merged
 * Median time to merge for merged pull requests, including pull requests created by {% data variables.copilot.copilot_cloud_agent %}
 
-These metrics can help you track adoption of {% data variables.copilot.copilot_cloud_agent %} and monitor changes in pull request throughput and time to merge over time. See [AUTOTITLE](/copilot/concepts/copilot-usage-metrics/copilot-metrics).
+These metrics can help you track adoption of {% data variables.copilot.copilot_cloud_agent %} and monitor changes in pull request throughput and time to merge over time. See [AUTOTITLE](/copilot/concepts/billing-and-usage/copilot-usage-metrics/copilot-metrics).
 
 ## Integrating {% data variables.copilot.copilot_cloud_agent %} with third-party tools
 
@@ -108,7 +108,7 @@ If you are a {% data variables.copilot.copilot_for_business %} or {% data variab
 
 Repository owners can choose to opt out some or all repositories from {% data variables.copilot.copilot_cloud_agent %}.
 
-See [AUTOTITLE](/copilot/concepts/agents/cloud-agent/access-management).
+See [AUTOTITLE](/copilot/concepts/enterprise/cloud-agent-access).
 
 ## AI models for {% data variables.copilot.copilot_cloud_agent %}
 
@@ -132,7 +132,7 @@ The more {% data variables.copilot.copilot_cloud_agent %} knows about the code i
 
 {% data variables.copilot.copilot_cloud_agent %} uses {% data variables.product.prodname_actions %} minutes and {% data variables.product.prodname_ai_credits_short %}. The {% data variables.product.prodname_ai_credits_short %} consumed depend on the model used and the number of tokens processed during the session.
 
-Within your included {% data variables.product.prodname_actions %} minutes and {% data variables.product.prodname_ai_credits_short %}, you can use {% data variables.copilot.copilot_cloud_agent %} without incurring additional costs. See [AUTOTITLE](/copilot/concepts/billing/usage-based-billing-for-organizations-and-enterprises).
+Within your included {% data variables.product.prodname_actions %} minutes and {% data variables.product.prodname_ai_credits_short %}, you can use {% data variables.copilot.copilot_cloud_agent %} without incurring additional costs. See [AUTOTITLE](/copilot/concepts/billing-and-usage/organizations-and-enterprises/billing).
 
 {% data variables.product.prodname_copilot_short %} code review also consumes {% data variables.product.prodname_actions %} minutes on private repositories. See [AUTOTITLE](/billing/concepts/product-billing/github-actions#copilot-code-review-and-github-actions-minutes).
 

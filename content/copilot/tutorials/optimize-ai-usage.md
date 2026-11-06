@@ -121,7 +121,7 @@ In {% data variables.copilot.copilot_cli_short %} and {% data variables.copilot.
 * You want to cap {% data variables.product.prodname_ai_credits_short %} usage on a single session to avoid unexpected costs.
 * You're tuning agent efficiency and want to find the minimum {% data variables.product.prodname_ai_credits_short %} that still produces a good result.
 
-Session limits are soft limits that help you control how many {% data variables.product.prodname_ai_credits_short %} any single task consumes, but they don't replace user-level budgets or spending limits, which govern your overall monthly consumption. For those controls, see [AUTOTITLE](/copilot/concepts/billing/budgets-for-usage-based-billing).
+Session limits are soft limits that help you control how many {% data variables.product.prodname_ai_credits_short %} any single task consumes, but they don't replace user-level budgets or spending limits, which govern your overall monthly consumption. For those controls, see [AUTOTITLE](/copilot/concepts/billing-and-usage/organizations-and-enterprises/budgets).
 
 For information on how to set a session limit in {% data variables.copilot.copilot_cli_short %}, see [AUTOTITLE](/copilot/how-tos/copilot-cli/use-copilot-cli/set-session-limit).
 
@@ -198,4 +198,4 @@ Teams that invest in these guardrails see fewer retries, faster task completion,
 Monitor and manage your spending to get the most out of your {% data variables.product.prodname_ai_credits_short %}:
 
 * **Use your dashboard and budget controls**. The "AI usage" page, under https://github.com/settings/billing, breaks down consumption across every feature and model, so you can see where your credits are actually going and adjust accordingly. See [AUTOTITLE](/copilot/how-tos/manage-and-track-spending/monitor-ai-usage).
-* **Upgrade for a larger allowance**. If you regularly approach your monthly limit, a higher plan may be more economical than paying for additional usage, as higher plans have more {% data variables.product.prodname_ai_credit_singular %} allowance. See [AUTOTITLE](/copilot/concepts/billing/individual-plans#github-ai-credits-allowance-by-plan) and [AUTOTITLE](/copilot/how-tos/manage-your-account/view-and-change-your-copilot-plan).
+* **Upgrade for a larger allowance**. If you regularly approach your monthly limit, a higher plan may be more economical than paying for additional usage, as higher plans have more {% data variables.product.prodname_ai_credit_singular %} allowance. See [AUTOTITLE](/copilot/get-started/plans#github-ai-credits-allowance-by-plan) and [AUTOTITLE](/copilot/how-tos/manage-your-account/view-and-change-your-copilot-plan).

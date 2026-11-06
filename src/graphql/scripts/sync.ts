@@ -18,7 +18,6 @@ import {
   getIgnoredChangesSummary,
 } from './build-changelog'
 
-// Type definitions
 interface GitHubRepoOptions {
   owner: string
   repo: string
@@ -79,7 +78,7 @@ const allIgnoredChanges: IgnoredChange[] = []
 
 async function main() {
   for (const version of versionsToBuild) {
-    // Get the relevant GraphQL name  for the current version
+    // Get the relevant GraphQL name for the current version.
     // For example, free-pro-team@latest corresponds to dotcom,
     // enterprise-server@2.22 corresponds to ghes-2.22.
     const graphqlVersion = allVersions[version].openApiVersionName
@@ -145,6 +144,7 @@ async function main() {
       latestSchema,
       previewsForSchema,
       fallbackCategoryMap,
+      { currentLanguage: 'en', currentVersion: version },
     ) // This is slow!
 
     // Split the schema by category so the runtime can lazily load only the
@@ -197,7 +197,7 @@ async function main() {
   // children and disappearance redirects, based on the presence collected above.
   await syncCategoryContentFiles(categoryPresence)
 
-  // Ensure the YAML linter runs before checkinging in files
+  // Run the YAML linter before anything is checked in.
   execSync('npx prettier -w "**/*.{yml,yaml}"')
 
   // Output ignored changes for GitHub Actions
@@ -211,7 +211,6 @@ async function main() {
       '::notice title=GraphQL Ignored Changes::Found ignored change types that may need review',
     )
 
-    // Write outputs to GitHub Actions output file
     if (process.env.GITHUB_OUTPUT) {
       appendFileSync(
         process.env.GITHUB_OUTPUT,
@@ -236,7 +235,6 @@ async function getRemoteRawContent(filepath: string, graphqlVersion: string) {
   let took = new Date().getTime() - t0
   console.log(`Got ref (${options.ref}) for '${graphqlVersion}'. Took ${formatTime(took)}`)
 
-  // add the filepath to the options so we can get the contents of the file
   options.path = `config/${path.basename(filepath)}`
 
   t0 = new Date().getTime()
@@ -274,7 +272,6 @@ async function getBranchAsRef(
   // the first time this runs, it uses the branch found for the version above
   if (!branch) branch = branches[versionType]
 
-  // set the branch as the ref
   const ref = `heads/${branch}`
 
   // check whether the branch can be found in github/github

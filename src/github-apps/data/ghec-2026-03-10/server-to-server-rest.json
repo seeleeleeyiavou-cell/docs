@@ -55,6 +55,36 @@
       "requestPath": "/enterprises/{enterprise}/actions/oidc/customization/properties/repo/{custom_property_name}"
     },
     {
+      "slug": "list-enterprise-actions-policies",
+      "subcategory": "policies",
+      "verb": "get",
+      "requestPath": "/enterprises/{enterprise}/actions/policies"
+    },
+    {
+      "slug": "create-an-enterprise-actions-policy",
+      "subcategory": "policies",
+      "verb": "post",
+      "requestPath": "/enterprises/{enterprise}/actions/policies"
+    },
+    {
+      "slug": "get-an-enterprise-actions-policy",
+      "subcategory": "policies",
+      "verb": "get",
+      "requestPath": "/enterprises/{enterprise}/actions/policies/{policy_id}"
+    },
+    {
+      "slug": "update-an-enterprise-actions-policy",
+      "subcategory": "policies",
+      "verb": "put",
+      "requestPath": "/enterprises/{enterprise}/actions/policies/{policy_id}"
+    },
+    {
+      "slug": "delete-an-enterprise-actions-policy",
+      "subcategory": "policies",
+      "verb": "delete",
+      "requestPath": "/enterprises/{enterprise}/actions/policies/{policy_id}"
+    },
+    {
       "slug": "get-github-actions-cache-retention-limit-for-an-organization",
       "subcategory": "cache",
       "verb": "get",
@@ -347,6 +377,36 @@
       "subcategory": "permissions",
       "verb": "put",
       "requestPath": "/orgs/{org}/actions/permissions/workflow"
+    },
+    {
+      "slug": "list-organization-actions-policies",
+      "subcategory": "policies",
+      "verb": "get",
+      "requestPath": "/orgs/{org}/actions/policies"
+    },
+    {
+      "slug": "create-an-organization-actions-policy",
+      "subcategory": "policies",
+      "verb": "post",
+      "requestPath": "/orgs/{org}/actions/policies"
+    },
+    {
+      "slug": "get-an-organization-actions-policy",
+      "subcategory": "policies",
+      "verb": "get",
+      "requestPath": "/orgs/{org}/actions/policies/{policy_id}"
+    },
+    {
+      "slug": "update-an-organization-actions-policy",
+      "subcategory": "policies",
+      "verb": "put",
+      "requestPath": "/orgs/{org}/actions/policies/{policy_id}"
+    },
+    {
+      "slug": "delete-an-organization-actions-policy",
+      "subcategory": "policies",
+      "verb": "delete",
+      "requestPath": "/orgs/{org}/actions/policies/{policy_id}"
     },
     {
       "slug": "list-self-hosted-runner-groups-for-an-organization",
@@ -829,6 +889,36 @@
       "requestPath": "/repos/{owner}/{repo}/actions/permissions/workflow"
     },
     {
+      "slug": "list-repository-actions-policies",
+      "subcategory": "policies",
+      "verb": "get",
+      "requestPath": "/repos/{owner}/{repo}/actions/policies"
+    },
+    {
+      "slug": "create-a-repository-actions-policy",
+      "subcategory": "policies",
+      "verb": "post",
+      "requestPath": "/repos/{owner}/{repo}/actions/policies"
+    },
+    {
+      "slug": "get-a-repository-actions-policy",
+      "subcategory": "policies",
+      "verb": "get",
+      "requestPath": "/repos/{owner}/{repo}/actions/policies/{policy_id}"
+    },
+    {
+      "slug": "update-a-repository-actions-policy",
+      "subcategory": "policies",
+      "verb": "put",
+      "requestPath": "/repos/{owner}/{repo}/actions/policies/{policy_id}"
+    },
+    {
+      "slug": "delete-a-repository-actions-policy",
+      "subcategory": "policies",
+      "verb": "delete",
+      "requestPath": "/repos/{owner}/{repo}/actions/policies/{policy_id}"
+    },
+    {
       "slug": "list-self-hosted-runners-for-a-repository",
       "subcategory": "self-hosted-runners",
       "verb": "get",
@@ -1237,6 +1327,12 @@
       "subcategory": "starring",
       "verb": "get",
       "requestPath": "/repos/{owner}/{repo}/stargazers/count"
+    },
+    {
+      "slug": "get-repository-star-history",
+      "subcategory": "starring",
+      "verb": "get",
+      "requestPath": "/repos/{owner}/{repo}/stargazers/history"
     },
     {
       "slug": "list-watchers",
@@ -1995,6 +2091,18 @@
   ],
   "code-scanning": [
     {
+      "slug": "get-the-ai-scan-setting-for-an-organization",
+      "subcategory": "code-scanning",
+      "verb": "get",
+      "requestPath": "/orgs/{org}/code-scanning/ai-scan"
+    },
+    {
+      "slug": "update-the-ai-scan-setting-for-an-organization",
+      "subcategory": "code-scanning",
+      "verb": "patch",
+      "requestPath": "/orgs/{org}/code-scanning/ai-scan"
+    },
+    {
       "slug": "list-code-scanning-alerts-for-an-organization",
       "subcategory": "code-scanning",
       "verb": "get",
@@ -2005,6 +2113,18 @@
       "subcategory": "alert-dismissal-requests",
       "verb": "get",
       "requestPath": "/orgs/{org}/dismissal-requests/code-scanning"
+    },
+    {
+      "slug": "get-ai-scan-enablement-for-a-repository",
+      "subcategory": "code-scanning",
+      "verb": "get",
+      "requestPath": "/repos/{owner}/{repo}/code-scanning/ai-scan"
+    },
+    {
+      "slug": "update-ai-scan-enablement-for-a-repository",
+      "subcategory": "code-scanning",
+      "verb": "patch",
+      "requestPath": "/repos/{owner}/{repo}/code-scanning/ai-scan"
     },
     {
       "slug": "list-code-scanning-alerts-for-a-repository",
@@ -3251,6 +3371,18 @@
       "requestPath": "/enterprises/{enterprise}/consumed-licenses"
     },
     {
+      "slug": "grant-credential-authorizations-for-enterprise-organizations",
+      "subcategory": "credential-authorizations",
+      "verb": "post",
+      "requestPath": "/enterprises/{enterprise}/credential-authorizations"
+    },
+    {
+      "slug": "revoke-enterprise-delegated-credential-authorizations",
+      "subcategory": "credential-authorizations",
+      "verb": "delete",
+      "requestPath": "/enterprises/{enterprise}/credential-authorizations"
+    },
+    {
       "slug": "revoke-all-credential-authorizations-for-an-enterprise",
       "subcategory": "credential-authorizations",
       "verb": "post",
@@ -3273,6 +3405,30 @@
       "subcategory": "credential-authorizations",
       "verb": "post",
       "requestPath": "/enterprises/{enterprise}/credential-authorizations/{username}/revoke-credential-type"
+    },
+    {
+      "slug": "list-enterprise-token-inventory",
+      "subcategory": "token-inventory",
+      "verb": "get",
+      "requestPath": "/enterprises/{enterprise}/credentials"
+    },
+    {
+      "slug": "create-an-enterprise-token-inventory-export",
+      "subcategory": "token-inventory",
+      "verb": "post",
+      "requestPath": "/enterprises/{enterprise}/credentials/exports"
+    },
+    {
+      "slug": "get-an-enterprise-token-inventory-export",
+      "subcategory": "token-inventory",
+      "verb": "get",
+      "requestPath": "/enterprises/{enterprise}/credentials/exports/{export_id}"
+    },
+    {
+      "slug": "get-an-enterprise-token-inventory-item",
+      "subcategory": "token-inventory",
+      "verb": "get",
+      "requestPath": "/enterprises/{enterprise}/credentials/{inventory_id}"
     },
     {
       "slug": "get-all-enterprise-roles-for-an-enterprise",
@@ -3552,6 +3708,12 @@
     }
   ],
   "enterprise-teams": [
+    {
+      "slug": "list-enterprise-teams-for-a-user",
+      "subcategory": "enterprise-team-members",
+      "verb": "get",
+      "requestPath": "/enterprises/{enterprise}/members/{username}/teams"
+    },
     {
       "slug": "list-enterprise-teams",
       "subcategory": "enterprise-teams",
